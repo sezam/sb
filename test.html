@@ -1,0 +1,21 @@
+<!--
+    При нажатии на кнопку должно отобразиться диалоговое окно для ввода текста.
+    Введенный текст должен быть отображен после слова Entered text
+    Использовать голый JavaScript
+-->
+
+<script type="application/javascript">
+    function onEnterText() {
+        document.getElementById("myDialog").showModal();
+    }
+    function onDialogOk() {
+        document.body.append(document.createTextNode(document.getElementById("inputtext").value));
+        document.getElementById("myDialog").close();
+    }
+</script>
+<dialog id="myDialog">
+    <input type="text" id="inputtext" value="" placeholder="enter text" onclick="onDialogOk()">
+    <input type="button" value="Enter text" onclick="onDialogOk()">
+</dialog>
+<input type="button" value="Enter text" onclick="onEnterText()">
+<b>Entered text:</b>
