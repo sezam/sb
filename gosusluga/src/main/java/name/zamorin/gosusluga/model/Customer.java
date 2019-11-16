@@ -1,12 +1,15 @@
 package name.zamorin.gosusluga.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
-public class Customer {
+@ToString
+public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
